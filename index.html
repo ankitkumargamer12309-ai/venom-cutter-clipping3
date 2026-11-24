@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VENOM CUTTER CLIPPING</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;background:#050705;color:white;
+ font-family:Arial,sans-serif;display:flex;align-items:center;
+ justify-content:center;text-align:center;overflow:hidden;
+}
+body:before{
+ content:"";position:fixed;width:600px;height:600px;
+ background:#39ff1420;filter:blur(120px);border-radius:50%;
+}
+main{position:relative;width:100%;max-width:850px;padding:30px}
+.logo{width:min(380px,85vw);height:auto;object-fit:contain;
+ filter:drop-shadow(0 0 22px #39ff1460)}
+h1{font-size:clamp(32px,7vw,66px);margin:12px 0;
+ letter-spacing:3px;text-shadow:0 0 20px #39ff1470}
+h1 span{color:#55ff36}
+.tagline{color:#a4afa4;letter-spacing:2px;font-size:13px;
+ line-height:1.8;margin:15px 0 35px}
+.enter{
+ display:inline-block;text-decoration:none;color:#071006;
+ background:#55ff36;padding:17px 65px;border-radius:5px;
+ font-weight:900;letter-spacing:4px;font-size:17px;
+ box-shadow:0 0 25px #39ff1470;transition:.2s
+}
+.enter:hover{transform:scale(1.06);box-shadow:0 0 40px #39ff14}
+footer{margin-top:65px;color:#7c887c;font-size:12px}
+footer span{color:#55ff36}
+</style>
+</head>
+<body>
+<main>
+ <img class="logo" src="venom-logo.png" alt="Venom Cutter Clipping Logo">
+ <h1>VENOM <span>CUTTER</span></h1>
+ <p class="tagline">LONG VIDEOS. DEADLY MOMENTS.<br>PERFECT CLIPS.</p>
+ <a class="enter" href="login.html">ENTER</a>
+ <footer>CREATED BY <span>@halcyon_011</span></footer>
+</main>
+</body>
+</html>
