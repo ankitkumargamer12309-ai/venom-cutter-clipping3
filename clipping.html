@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venom Clipping Studio</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070a07;color:white;font-family:Arial,sans-serif}
+header{padding:20px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #243024}
+.logo{font-size:22px;font-weight:900;letter-spacing:1px}
+.logo span{color:#59ff35}
+.tag{font-size:11px;color:#59ff35;letter-spacing:2px}
+main{max-width:1050px;margin:35px auto;padding:20px}
+h1{font-size:36px;margin-bottom:8px}
+h1 span{color:#59ff35}
+.sub{color:#9da99d;margin-bottom:30px}
+.panel{background:#111811;border:1px solid #293729;border-radius:13px;padding:24px;margin-bottom:22px}
+h2{font-size:18px;margin:0 0 18px}
+.uploads{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.uploadbox{border:1px dashed #526b52;background:#0b110b;border-radius:10px;padding:25px;text-align:center}
+.uploadbox .symbol{font-size:30px;color:#59ff35}
+.uploadbox p{color:#9da99d;font-size:13px}
+input[type=file]{width:100%;font-size:12px;color:#bbb}
+input[type=url],select{width:100%;background:#080d08;border:1px solid #344534;color:white;padding:13px;border-radius:7px;margin-top:10px}
+label{display:block;color:#cbd5cb;font-size:13px;margin:14px 0 5px}
+button{border:0;cursor:pointer;font-weight:bold}
+.greenbtn{background:#59ff35;color:#071006;padding:14px 22px;border-radius:7px;width:100%;margin-top:18px;font-size:15px}
+.options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.option{background:#0a100a;border:1px solid #344534;color:white;padding:16px 8px;border-radius:8px;cursor:pointer}
+.option.active{border:1px solid #59ff35;color:#59ff35;background:#142014}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.small{font-size:12px;color:#899689;line-height:1.6}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.feature{background:#0b110b;padding:13px;border-radius:7px;color:#cbd5cb;font-size:13px}
+.feature span{color:#59ff35;margin-right:7px}
+#status{font-size:13px;color:#59ff35;margin-top:15px;line-height:1.5}
+footer{text-align:center;padding:30px;color:#899689;font-size:12px}
+footer span{color:#59ff35}
+@media(max-width:650px){.uploads,.row{grid-template-columns:1fr}.options{grid-template-columns:1fr 1fr}h1{font-size:28px}main{padding:14px}.panel{padding:17px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">VENOM <span>CUTTER</span></div>
+ <div class="tag">AI CLIPPING STUDIO</div>
+</header>
+
+<main>
+ <h1>CREATE YOUR <span>CLIPS</span></h1>
+ <p class="sub">Upload your stream. Let Venom find the moments.</p>
+
+ <section class="panel">
+  <h2>01 / ADD YOUR VIDEO</h2>
+  <div class="uploads">
+   <div class="uploadbox">
+    <div class="symbol">↑</div>
+    <h3>UPLOAD VIDEO</h3>
+    <p>Select a video from your PC</p>
+    <input id="video" type="file" accept="video/*">
+   </div>
+   <div class="uploadbox">
+    <div class="symbol">↗</div>
+    <h3>VIDEO LINK</h3>
+    <p>Paste a supported video URL</p>
+    <input id="videoLink" type="url" placeholder="Paste video link here">
+   </div>
+  </div>
+  <p class="small">Choose one video source. Link importing will support compatible and authorized sources.</p>
+ </section>
+
+ <section class="panel">
+  <h2>02 / CLIP SETTINGS</h2>
+  <div class="row">
+   <div>
+    <label>CLIP DURATION</label>
+    <select id="duration">
+     <option value="auto">AI chooses best duration</option>
+     <option value="15">15 seconds</option>
+     <option value="30" selected>30 seconds</option>
+     <option value="45">45 seconds</option>
+     <option value="60">60 seconds</option>
+    </select>
+   </div>
+   <div>
+    <label>OUTPUT QUALITY</label>
+    <select id="quality">
+     <option>1080p HD</option>
+     <option>720p HD</option>
+     <option>Original quality</option>
+    </select>
+   </div>
+  </div>
+  <label>VIDEO RATIO</label>
+  <div class="options" id="ratios">
+   <button class="option active" data-ratio="9:16">9:16<br><small>Reels / Shorts</small></button>
+   <button class="option" data-ratio="16:9">16:9<br><small>YouTube</small></button>
+   <button class="option" data-ratio="1:1">1:1<br><small>Square</small></button>
+  </div>
+ </section>
+
+ <section class="panel">
+  <h2>03 / SUBTITLE DESIGN</h2>
+  <div class="row">
+   <div>
+    <label>SUBTITLE LANGUAGE</label>
+    <select id="language">
+     <option>Auto Detect</option>
+     <option>English</option>
+     <option>Hindi</option>
+     <option>Hinglish</option>
+    </select>
+   </div>
+   <div>
+    <label>SUBTITLE STYLE</label>
+    <select id="subtitleStyle">
+     <option>Bold Gaming</option>
+     <option>Clean Minimal</option>
+     <option>Neon Green</option>
+     <option>Word Highlight</option>
+    </select>
+   </div>
+  </div>
+ </section>
+
+ <section class="panel">
+  <h2>04 / VENOM AI FEATURES</h2>
+  <div class="features">
+   <div class="feature"><span>✦</span> Best Moment Detection</div>
+   <div class="feature"><span>✦</span> Automatic Facecam Layout</div>
+   <div class="feature"><span>✦</span> Full Gameplay Framing</div>
+   <div class="feature"><span>✦</span> Automatic Subtitles</div>
+   <div class="feature"><span>✦</span> AI Titles & Editing</div>
+   <div class="feature"><span>✦</span> Highlight Scoring</div>
+  </div>
+  <button class="greenbtn" onclick="generate()">ANALYZE & CREATE CLIPS</button>
+  <div id="status"></div>
+ </section>
+</main>
+
+<footer>MADE BY <span>@halcyon_011</span> · VENOM CUTTER CLIPPING</footer>
+
+<script>
+let selectedRatio="9:16";
+document.querySelectorAll(".option").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.querySelectorAll(".option").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  selectedRatio=button.dataset.ratio;
+ });
+});
+function generate(){
+ const file=document.getElementById("video").files[0];
+ const link=document.getElementById("videoLink").value.trim();
+ const status=document.getElementById("status");
+ if(!file&&!link){
+  status.textContent="Please upload a video or enter a supported video link.";
+  return;
+ }
+ if(file&&link){
+  status.textContent="Please choose only one video source.";
+  return;
+ }
+ status.textContent="Studio design ready. AI processing will be connected to the backend in the next stage.";
+}
+</script>
+</body>
+</html>
